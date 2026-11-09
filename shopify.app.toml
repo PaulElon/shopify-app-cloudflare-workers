@@ -1,0 +1,28 @@
+# Shopify app configuration (example app: Discount Excluder). Learn more: https://shopify.dev/docs/apps/tools/cli/configuration
+client_id = ""
+name = "Discount Excluder Example"
+application_url = "https://YOUR-WORKER.workers.dev"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = false
+
+[access_scopes]
+scopes = "write_discounts"
+
+[auth]
+redirect_urls = [ "https://YOUR-WORKER.workers.dev/auth/callback" ]
+
+[webhooks]
+api_version = "2026-04"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  compliance_topics = [ "customers/data_request", "customers/redact", "shop/redact" ]
+  uri = "/webhooks/compliance"
+
+[pos]
+embedded = false

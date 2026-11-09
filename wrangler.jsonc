@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "shopify-app-workers",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "kv_namespaces": [{ "binding": "SESSIONS", "id": "REPLACE_WITH_KV_ID" }],
+  "vars": { "SHOPIFY_API_KEY": "REPLACE", "SHOPIFY_APP_URL": "https://YOUR-WORKER.workers.dev", "SHOPIFY_APP_HANDLE": "your-app-handle" },
+  "observability": { "enabled": true }
+}

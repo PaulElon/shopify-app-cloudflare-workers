@@ -1,0 +1,22 @@
+api_version = "2026-04"
+
+[[extensions]]
+name = "Discount Excluder"
+handle = "discount-excluder"
+type = "function"
+description = "Percentage or fixed discount on everything except chosen products, collections, or tags."
+
+  [[extensions.targeting]]
+  target = "cart.lines.discounts.generate.run"
+  input_query = "src/cart_lines_discounts_generate_run.graphql"
+  input_variables = { namespace = "$app:discount-excluder", key = "input-variables" }
+  export = "cart-lines-discounts-generate-run"
+
+  [extensions.build]
+  command = ""
+  path = "dist/function.wasm"
+  watch = [ "src/**/*.js" ]
+
+  [extensions.ui.paths]
+  create = "/app/discounts/new?functionId=:functionId"
+  details = "/app/discounts/:id?functionId=:functionId"

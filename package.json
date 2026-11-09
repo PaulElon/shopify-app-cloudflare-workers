@@ -1,0 +1,27 @@
+{
+  "name": "shopify-app-cloudflare-workers",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test extensions/discount-excluder/test/*.test.mjs",
+    "shopify": "shopify"
+  },
+  "dependencies": {
+    "@shopify/shopify-api": "^15.0.1",
+    "hono": "^4.13.16"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.0.0",
+    "@shopify/cli": "^5.0.0",
+    "typescript": "^5.9.0",
+    "wrangler": "^4.61.0"
+  },
+  "workspaces": [
+    "extensions/*"
+  ],
+  "description": "Shopify embedded app on the Cloudflare Workers free tier, with a Shopify Function example"
+}

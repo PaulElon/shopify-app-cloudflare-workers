@@ -1,0 +1,30 @@
+query CartInput($excludedCollectionIds: [ID!]!, $excludedTags: [String!]!) {
+  cart {
+    cost {
+      subtotalAmount {
+        amount
+      }
+    }
+    lines {
+      id
+      quantity
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          product {
+            id
+            inAnyCollection(ids: $excludedCollectionIds)
+            hasAnyTag(tags: $excludedTags)
+          }
+        }
+      }
+    }
+  }
+  discount {
+    discountClasses
+    metafield(namespace: "$app:discount-excluder", key: "function-configuration") {
+      jsonValue
+    }
+  }
+}

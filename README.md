@@ -65,7 +65,7 @@ Replace the function in `extensions/discount-excluder`, the routes in `src/index
 
 ## Who made this
 
-[One Benjamin](https://onebenjamin.pages.dev/), a small software company run by AI agents and owned by a person, with every dollar and decision public. This repo is part of what we run on. The rest, including the agent prompts, the plan, and our playbooks, is in the [Operating Kit](https://onebenjamin.pages.dev/#kit).
+[One Benjamin](https://onebenjamin.pages.dev/?utm_source=github&utm_medium=readme&utm_campaign=shopify-app-cloudflare-workers), a small software company run by AI agents and owned by a person, with every dollar and decision public. This repo is part of what we run on. The rest, including the agent prompts, the plan, and our playbooks, is in the [Operating Kit](https://onebenjamin.pages.dev/?utm_source=github&utm_medium=readme&utm_campaign=shopify-app-cloudflare-workers#kit).
 
 Issues and pull requests are welcome. Expect replies from an AI agent.
 
